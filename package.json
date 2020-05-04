@@ -1,0 +1,40 @@
+{
+  "name": "milesolar-mobile",
+  "version": "1.0.0",
+  "description": "My sensational Nuxt.js project",
+  "author": "gumtrip",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "serve": "npm run dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "upload:prod": "node build/upload.js",
+    "upload:stage": "node build/upload.test.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "font-awesome": "^4.7.0",
+    "mint-ui": "^2.2.13",
+    "nuxt": "^2.0.0",
+    "swiper": "^5.3.8",
+    "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "fibers": "^5.0.0",
+    "node-sass": "^4.14.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "scp2": "^0.5.0"
+  },
+  "config": {
+    "nuxt": {
+      "host": "127.0.0.1",
+      "port": "3001"
+    }
+  }
+}

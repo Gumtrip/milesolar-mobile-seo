@@ -1,0 +1,10 @@
+{
+  "apps": [
+  {
+    "name": "m",
+    "cwd": "./",
+    "script": "./node_modules/nuxt/bin/nuxt.js",
+    "port": "3001"
+  }
+]
+}
