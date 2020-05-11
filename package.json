@@ -23,7 +23,9 @@
     "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
+    "@babel/runtime-corejs3": "^7.9.6",
     "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
     "fibers": "^5.0.0",
