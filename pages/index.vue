@@ -4,7 +4,7 @@
       <swiper ref="mySwiper">
         <swiper-slide v-for="(banner,key) in banners" :key="key">
           <router-link :to="banner.url" class="bannerImg">
-            <img src="../static/banner-1.jpg" alt="Power inverter, MPPT controller, off-grid solar system, MILESOLAR">
+            <img src="../static/banner.png" alt="Power inverter, MPPT controller, off-grid solar system, MILESOLAR">
           </router-link>
         </swiper-slide>
       </swiper>
