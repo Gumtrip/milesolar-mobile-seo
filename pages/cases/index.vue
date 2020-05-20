@@ -8,7 +8,7 @@
         infinite-scroll-distance="10"
       >
         <li v-for="(sample,key) in samples" :key="key" class="sample">
-          <nuxt-link :to="{name:'cases-id',params:{id:sample.id}}">
+          <nuxt-link :to="{name:'cases-id-slug',params:{id:sample.id,slug:sample.slug}}">
             <div class="img flexPic">
               <img :src="sample.sm_img" alt="">
             </div>
@@ -29,6 +29,7 @@
 import Loading from '@/components/utils/Loading'
 import Bread from '@/components/utils/BreadCrumb'
 import { samples } from '~/plugins/http'
+import { APP_URL } from '~/seo.config'
 
 export default {
   name: 'Index',
@@ -66,7 +67,28 @@ export default {
         this.loading = false
       }
     }
+  },
+  head() {
+    return {
+      script: [{
+        type: 'application/ld+json',
+        json: {
+          '@context': 'http://schema.org',
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            {
+              '@type': 'ListItem',
+              'position': '1',
+              'name': 'Index',
+              'item': APP_URL
+            }
+          ]
+        }
+      }
+      ]
+    }
   }
+
 }
 </script>
 

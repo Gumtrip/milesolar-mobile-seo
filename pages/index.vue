@@ -60,7 +60,7 @@
     <section id="indexNews">
       <ul>
         <li v-for="(article,key) in articles" :key="key" class="list">
-          <router-link :to="{name:'article.show',params:{id:article.id}}">
+          <router-link :to="{name:'articles-id-slug',params:{id:article.id,slug:article.slug}}">
             <div class="txt">
               <div class="newIcon">
                 <span>News</span>
@@ -73,7 +73,6 @@
                 <img :src="article.sm_img">
               </div>
             </div>
-
           </router-link>
         </li>
       </ul>
@@ -84,6 +83,7 @@
 <script>
   import { productCategories, articles } from '~/plugins/http'
   import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+  import { APP_URL, TITLE } from '@/seo.config'
   import 'swiper/css/swiper.css'
   export default {
     name: 'Home',
@@ -130,6 +130,38 @@
         }).then((response) => {
           this.aboutsUs = response.data
         })
+      }
+    },
+    head() {
+      return {
+        script: [{
+          type: 'application/ld+json',
+          json: {
+            '@context': 'http://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': '1',
+                'name': 'Index',
+                'item': APP_URL
+              }
+            ]
+          }
+        },
+          {
+            type: 'application/ld+json',
+            json: {
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              'headline': TITLE,
+              'image': [
+                APP_URL + '/logo.png'
+              ]
+            }
+          }
+
+        ]
       }
     }
   }
