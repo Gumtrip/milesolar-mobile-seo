@@ -95,7 +95,7 @@
         aboutsUs: [],
         selected: 'tab-0', // 首页about us选项卡
         banners: [
-          { image: '../static/banner-1.jpg', url: '/' }
+          { image: '../static/banner.png', url: '/' }
         ]
       }
     },
